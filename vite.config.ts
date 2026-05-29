@@ -11,10 +11,11 @@ if (process.env.VERCEL) {
 }
 
 export default defineConfig({
-  nitro: {
-    preset: "vercel"
-  },
+  nitro: true,
   tanstackStart: {
-    server: { entry: "server" },
+    server: { 
+      preset: "vercel",
+      entry: "server" 
+    },
   },
 });
