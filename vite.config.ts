@@ -11,11 +11,14 @@ if (process.env.VERCEL) {
 }
 
 export default defineConfig({
-  nitro: true,
+  nitro: {
+    output: {
+      dir: ".vercel/output",
+      serverDir: ".vercel/output/functions/__server.func",
+      publicDir: ".vercel/output/static"
+    }
+  },
   tanstackStart: {
-    server: { 
-      preset: "vercel",
-      entry: "server" 
-    },
+    server: { entry: "server" },
   },
 });
